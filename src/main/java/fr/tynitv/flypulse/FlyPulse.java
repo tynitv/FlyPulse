@@ -1,5 +1,6 @@
 package fr.tynitv.flypulse;
 
+import fr.tynitv.flypulse.command.FlyTabCompleter;
 import fr.tynitv.flypulse.command.TempFlyCommand;
 import fr.tynitv.flypulse.fly.FlyManager;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -16,11 +17,12 @@ public class FlyPulse extends JavaPlugin {
 
         this.flyManager = new FlyManager(this);
 
-        if (getCommand("tempfly") != null) {
-            getCommand("tempfly").setExecutor(new TempFlyCommand(this, flyManager));
+        if (getCommand("fly") != null) {
+            getCommand("fly").setExecutor(new TempFlyCommand(this, flyManager));
+            getCommand("fly").setTabCompleter(new FlyTabCompleter());
         }
 
-        getLogger().info("FlyPulse v1.0.0 enabled!");
+        getLogger().info("FlyPulse v1.1.0 enabled with Timed Survival Flight & TabCompleter!");
     }
 
     @Override
@@ -30,5 +32,9 @@ public class FlyPulse extends JavaPlugin {
 
     public static FlyPulse getInstance() {
         return instance;
+    }
+
+    public FlyManager getFlyManager() {
+        return flyManager;
     }
 }
