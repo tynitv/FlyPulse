@@ -1,0 +1,10 @@
+name: FlyPulse
+version: '1.0.0'
+main: fr.tynitv.flypulse.FlyPulse
+api-version: '1.20'
+description: Temporary Timed Survival Flight Engine for Paper 1.21.x
+commands:
+  tempfly:
+    description: Activer le vol temporaire
+    permission: flypulse.use
+    aliases: [tfly, flytime]

@@ -1,0 +1,9 @@
+# ========================================================
+#              FlyPulse Configuration File
+# ========================================================
+
+default-fly-seconds: 60
+messages:
+  prefix: "<gradient:#11998E:#38EF7D><bold>FlyPulse</bold></gradient> <gray>»</gray> "
+  enabled: "<prefix><green>Vol temporaire activé pendant <yellow>{seconds}s</yellow> !</green>"
+  expired: "<prefix><red>Ton temps de vol est écoulé !</red>"
